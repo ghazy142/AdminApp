@@ -1,0 +1,39 @@
+<div class="container text-center" *ngIf="playground">
+  <div class="row">
+    <div class="col">
+      <h2>{{ playground.name }}</h2>
+      <p><strong>Description:</strong> {{ playground.description }}</p>
+      <p><strong>Advantages:</strong> {{ playground.advantages }}</p>
+      <p><strong>Address:</strong> {{ playground.address }}</p>
+      <p><strong>Type:</strong> {{ playground.type }}</p>
+    </div>
+    <div class="col">
+      <p><strong>Rating:</strong> {{ playground.rating }}</p>
+      <p><strong>Country:</strong> {{ playground.country }}</p>
+      <p><strong>City:</strong> {{ playground.city }}</p>
+      <p><strong>Longitude:</strong> {{ playground.longitude }}</p>
+      <p><strong>Latitude:</strong> {{ playground.latitude }}</p>
+    </div>
+    <div class="col">
+      <p><strong>Holidays:</strong> {{ playground.holidays }}</p>
+      <p><strong>Opening Hours:</strong> {{ playground.openingHours }}</p>
+      <p><strong>Fees per Hour:</strong> {{ playground.feesForHour }}</p>
+      <p><strong>Cancellation Fees:</strong> {{ playground.cancellationFees }}</p>
+      <p><strong>Is Bookable:</strong> {{ playground.isBookable }}</p>
+      <p><strong>Rules:</strong> {{ playground.rules }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="playgroundPictures.length > 0">
+  <h3>Pictures:</h3>
+  <div class="row">
+    <div class="col-4" *ngFor="let picture of playgroundPictures; let i = index">
+      <img class="img-fluid rounded mx-auto d-block mb-4" [src]="'data:image/jpeg;base64,' + picture.picture" alt="Playground Picture" width="400">
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!playground">
+  <p>Loading playground details...</p>
+</div>
